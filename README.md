@@ -11,7 +11,7 @@ It's formatted to be sent to a 4 x 6 label printer.
 
 # Adding FBALabelConvert to the Context Menu  addcontextmenu.reg
 
-Save this file then edit it to specify he location where you put FBALabelConvert.bat
+Save this file then edit it to specify the location where you put FBALabelConvert.bat
 Save your changes then "open" it (double-click?) to modify your Registry
 
 # DEPENDANCIES

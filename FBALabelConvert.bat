@@ -63,9 +63,11 @@ ECHO %iam%: Set up / clean up a temorary directory  %tempdir%
 MD %tempdir%
 DEL /Q %tempdir%\*.PPM
 DEL /Q %tempdir%\*.PBM
+DEL /Q %tempdir%\*.PNG
 DEL /Q %tempdir%\*.PDF
 
 COPY %1 %tempdir%\AmzFBA.pdf
+
 ECHO %iam%: Using PDFIMAGES utility to extract label images from Amazon's PDF...
 PDFIMAGES -j %tempdir%\AmzFBA.pdf %tempdir%\xxx
 
@@ -78,7 +80,7 @@ FOR %%f IN (%tempdir%\*.ppm) DO (
 )
 ENDLOCAL
 
-ECHO %iam%: Using MAGICK CONVERT to cut out each (.PBM) FBA box label.  Output PNG images at 800 x 1024
+ECHO %iam%: Using MAGICK CONVERT to cut out each FBA box label from the PDF.  Output PNG images at 800 x 1024
 MAGICK convert -density 400 %tempdir%\AmzFBA.pdf  -colorspace gray -gravity northwest -alpha off -crop 50x48%%+0+150 -resize 800x1204 %tempdir%\FBA.png
 
 ECHO %iam%: Using MAGICK to Combine images into a single PDF, each page is set to be 800x1204 to avoid any resizing

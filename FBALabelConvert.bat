@@ -4,10 +4,9 @@
 :: Mark Byrd, Net Sells It inc [mark.byrd@netsellsit.com]
 
 :: INSTALLATION
-:: Add this .BAT file to the Windows Context Menu (see below)
-:: ... Find a place for the BAT file
-:: ... then update the Registry to launch it from the context menu
-:: ... check the "dependancies" to be sure the 3rd party utilities are available
+:: 1) Copy this .BAT file to C:\Windows
+:: 2) Update the Registry to launch it from the context menu
+:: 3) Check the "dependancies" to be sure the 3rd party utilities are installed
 :: 
 :: USAGE
 :: Let Amazon "Print" the FBA Shipping Lables PDF
@@ -31,14 +30,21 @@
 :: Windows Registry Editor Version 5.00
 :: [HKEY_CLASSES_ROOT\*\shell\FBALabelConvert]
 :: [HKEY_CLASSES_ROOT\*\shell\FBALabelConvert\command]
-:: @="\"D:\\Amazon\\FBAlabels\\FBALabelConvert.bat\" \"%1\""
+:: @="\"C:\\Windows\\FBALabelConvert.bat\" \"%1\""
 :: ---------------------------------------------------------------------------
 ::
 :: DEPENDANCIES
 :: 
-:: XPDFREADER / PDFIMAGES UTILITY from www.xpdfreader.com
+:: XPDFREADER / XPDFTOOLS / PDFIMAGES UTILITY from www.xpdfreader.com 
+::   Link: [https://xpdfreader-dl.s3.amazonaws.com/xpdf-tools-win-4.00.zip]
+::
 :: MAGICK / IMAGE MAGIC COMMAND LINE UTILITY from www.imagemagick.org
+::   Link: ftp://ftp.imagemagick.org/pub/ImageMagick/binaries/ImageMagick-7.0.7-28-Q16-x64-dll.exe
+::  
+:: GHOSTSCRIPT from www.ghostscript.com
+::   Link: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs923/gs923w64.exe
 :: 
+:: :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 SET iam=%~n0
 ECHO %iam%: Starting ...

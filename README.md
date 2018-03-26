@@ -1,8 +1,12 @@
 # Amazon-FBA-Box-Label-Batch-Print  FBALabelConvert.bat
 
-Windows "Batch" command to reformat Amazon FBA Box Shipping Labels PDF to a new PDF formatted for printing to a Zebra LP2844 Label Printer
+Windows "Batch" command to reformat Amazon FBA Box Shipping Labels PDF to a new PDF formatted for printing 
+to a Zebra LP2844 Label Printer
 
-Creating an Amazon FBA shipment results in one or more label sets; one set for each box in the shipment.  The set is formatted to a letter size page in a PDF.  That PDF [Package (nn).pdf] is typically opened by your browser or placed in your "Downloads" directory.  This process assumes that file is in your Downloads directory and you can select it with Windows Explorer.  
+Creating an Amazon FBA shipment results in one or more label sets; one set for each box in the shipment.  
+The set is formatted to a letter size page in a PDF.  That PDF [Package (nn).pdf] is typically opened by 
+your browser or placed in your "Downloads" directory.  This process assumes that file is in your Downloads 
+directory and you can select it with Windows Explorer.  
 
 FBALabelConvert is initated from the right-click context menu after selecting the Package(nn).pdf.
 It uses 3rd party utilities; XPFREADER; IMAGE MAGIC, and GHOSTSCIPT to do image conversion.
@@ -36,4 +40,4 @@ Minimal (its a batch file).  The Command Shell window closes when the converted 
 not closed when FBALabelConvert is excuted, it may not produce a new output file.  If there are error messages, you may 
 want to try running FBALabelConvert from the command line.  
 
-c:\Users\<username>\Downloads>fbalabelconvert package.pdf
+Command line example: c:\Users\<username>\Downloads>fbalabelconvert package.pdf
